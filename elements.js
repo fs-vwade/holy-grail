@@ -21,18 +21,29 @@ const lorem_ipsum = {
 body = document.body;
 elements = {
 	header: document.createElement("header"),
+	center_container: document.createElement("div"),
 	sidebar_left: document.createElement("nav"),
 	center: document.createElement("main"),
 	sidebar_right: document.createElement("article"),
 	footer: document.createElement("footer"),
 };
 
-Object.entries(elements).forEach((e, i) => {
-	e[1].innerText = e[0];
-	lorem_ipsum.text[e[0]];
+Object.entries(elements).forEach((e) => {
+	if (e[0] == "center_container") {
+		//e[1].innerText = e[0];
+	} else {
+		e[1].innerText = e[0];
+		lorem_ipsum.text[e[0]];
+	}
 	e[1].className = e[0];
 	body.append(e[1]);
 });
+
+elements.center_container.append(
+	elements.sidebar_left,
+	elements.center,
+	elements.sidebar_right
+);
 
 //body.append(header);
 //body.append(sidebar_left);
