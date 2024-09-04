@@ -1,0 +1,82 @@
+:root {
+	--phi: calc(1 / (pow(5, 0.5) * 0.5 + 0.5));
+	--header-ratio: pow(var(--phi), 4);
+	--header-remain: max(0, 1 - 2 * var(--header-ratio));
+	--header-height: calc(100% * var(--header-ratio));
+	--center-height: calc(100% * var(--header-remain));
+	--side-ratio: (pow(var(--phi), 3));
+	--side-remain: max(0, 1 - 2 * var(--side-ratio));
+	--side-width: calc(100% * var(--side-ratio));
+	--center-width: calc(100% * var(--side-remain));
+}
+
+html {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+	margin: 0;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+}
+
+.border {
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 1px;
+	padding: 0rem;
+	margin: 0;
+}
+
+.header div,
+.center.text {
+	font-family: Ubuntu;
+	font-size: calc(1rem * pow(var(--phi), 0));
+	padding: 1rem;
+	width: auto;
+	height: auto;
+}
+
+.header,
+.sidebar_left,
+.center,
+.sidebar_right,
+.footer {
+	width: 100%;
+	height: var(--header-height);
+}
+
+.sidebar_left,
+.center,
+.sidebar_right {
+	width: var(--side-width);
+	height: var(--center-height);
+}
+
+.header div {
+	font-style: italic;
+}
+
+/* No Flex Shrinking */
+.header,
+.footer {
+}
+.header {
+	/*height: var(--header-height);*/
+}
+.sidebar_left {
+}
+.center {
+	width: var(--center-width);
+	overflow-y: auto;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+.sidebar_right {
+}
+.footer {
+	/*height: var(--header-height);*/
+}
