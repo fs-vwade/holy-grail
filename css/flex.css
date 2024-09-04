@@ -14,10 +14,3 @@ body {
 .footer {
 	flex: 1 1 auto;
 }
-
-.sidebar_left,
-.center,
-.sidebar_right {
-	flex-flow: row;
-	flex-wrap: wrap;
-}
