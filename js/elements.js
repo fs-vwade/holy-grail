@@ -16,8 +16,8 @@ const lorem_ipsum = {
 };
 
 /** Create the page elements */
-body = document.body;
-elements = {
+const body = document.body;
+const elements = {
 	header: document.createElement("header"),
 	sidebar_left: document.createElement("nav"),
 	center: document.createElement("main"),
