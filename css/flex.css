@@ -1,0 +1,23 @@
+@import url("generic/common.css");
+
+body {
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	align-content: space-between;
+}
+
+.header,
+.sidebar_left,
+.center,
+.sidebar_right,
+.footer {
+	flex: 1 1 auto;
+}
+
+.sidebar_left,
+.center,
+.sidebar_right {
+	flex-flow: row;
+	flex-wrap: wrap;
+}
