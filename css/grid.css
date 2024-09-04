@@ -1,0 +1,45 @@
+@import url("generic/common.css");
+
+body {
+	--column-width: calc(100% * pow(var(--phi), 3));
+	--column-height: calc(100% * pow(var(--phi), 4));
+
+	display: grid;
+	grid-template-columns: var(--column-width) repeat(3, 1fr) var(--column-width);
+	grid-template-rows: var(--column-height) repeat(3, 1fr) var(--column-height);
+}
+
+.header,
+.sidebar_left,
+.center,
+.sidebar_right,
+.footer {
+	height: auto;
+	width: auto;
+}
+
+.header,
+.footer {
+	grid-column: 1 / 6;
+}
+.sidebar_left,
+.center,
+.sidebar_right {
+	grid-row: 2 / 5;
+}
+
+.header {
+	grid-row: 1 / 2;
+}
+.footer {
+	grid-row: 5 / 6;
+}
+.center {
+	grid-column: 2 / 5;
+}
+.sidebar_left {
+	grid-column: 1 / 2;
+}
+.sidebar_right {
+	grid-column: 5 / 6;
+}
